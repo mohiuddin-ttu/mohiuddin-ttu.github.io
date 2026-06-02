@@ -68,13 +68,13 @@
 
     /* ── HERO ─────────────────────────────────── */
     .hero {
-      display: flex; gap: 52px; padding: 52px 0 48px; align-items: flex-start;
+      display: flex; gap: 44px; padding: 32px 0 28px; align-items: flex-start;
     }
 
     /* ── SIDEBAR ──────────────────────────────── */
-    .sidebar { width: 220px; flex-shrink: 0; text-align: left; }
+    .sidebar { width: 200px; flex-shrink: 0; text-align: left; }
     .avatar-wrap {
-      width: 190px; height: 190px; margin: 0 0 18px 0;
+      width: 168px; height: 168px; margin: 0 0 14px 0;
       border-radius: 50%; overflow: hidden;
       border: 1px solid var(--border); background: var(--surface);
       display: flex; align-items: center; justify-content: center;
@@ -85,12 +85,12 @@
       font-weight: 600; color: #9ca3af;
     }
     .sidebar-name {
-      font-family: 'DM Sans', sans-serif; font-size: 17px;
-      font-weight: 700; color: var(--text); margin-bottom: 6px;
+      font-family: 'DM Sans', sans-serif; font-size: 16px;
+      font-weight: 700; color: var(--text); margin-bottom: 4px;
     }
     .sidebar-role {
-      font-family: 'DM Sans', sans-serif; font-size: 14.5px;
-      color: var(--muted); line-height: 1.6; margin-bottom: 22px;
+      font-family: 'DM Sans', sans-serif; font-size: 13.5px;
+      color: var(--muted); line-height: 1.5; margin-bottom: 14px;
     }
     .social-row { display: flex; justify-content: flex-start; gap: 9px; flex-wrap: wrap; }
 
@@ -122,41 +122,41 @@
     /* ── MAIN BIO ─────────────────────────────── */
     .main { flex: 1; min-width: 0; }
     .bio p {
-      font-size: 18px; line-height: 1.85; color: #2d2d2d; margin-bottom: 1.1rem;
+      font-size: 16.5px; line-height: 1.75; color: #2d2d2d; margin-bottom: 0.7rem;
     }
     .bio p:last-child { margin-bottom: 0; }
 
     /* ── JMP BOX ──────────────────────────────── */
     .jmp-box {
-      margin: 1.8rem 0 1.6rem; padding: 22px 24px;
+      margin: 0.9rem 0 0.8rem; padding: 14px 18px;
       border: 1px solid #d1dce8; border-left: 4px solid var(--accent);
       border-radius: 6px; background: #f6f9fc;
     }
     .jmp-label {
-      font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+      font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px;
     }
     .jmp-title {
-      font-size: 17.5px; font-weight: 600; line-height: 1.45;
-      color: var(--text); margin-bottom: 8px;
+      font-size: 15.5px; font-weight: 600; line-height: 1.4;
+      color: var(--text); margin-bottom: 5px;
     }
     .jmp-tags {
-      font-family: 'DM Sans', sans-serif; font-size: 14px;
-      color: var(--muted); margin-bottom: 12px;
+      font-family: 'DM Sans', sans-serif; font-size: 12.5px;
+      color: var(--muted); margin-bottom: 8px;
     }
     .jmp-abstract {
-      font-size: 16px; line-height: 1.78; color: #444; margin-bottom: 16px;
+      font-size: 14px; line-height: 1.68; color: #444; margin-bottom: 10px;
     }
     .jmp-links { display: flex; gap: 9px; flex-wrap: wrap; }
     .jmp-links a {
-      font-family: 'DM Sans', sans-serif; font-size: 14.5px; font-weight: 500;
-      padding: 7px 18px; border: 1px solid var(--border); border-radius: 4px;
+      font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500;
+      padding: 5px 14px; border: 1px solid var(--border); border-radius: 4px;
       background: #fff; color: var(--accent);
       transition: background 0.15s, border-color 0.15s;
     }
     .jmp-links a:hover { background: #eef4fb; border-color: var(--accent); text-decoration: none; }
     .methods-line {
-      font-family: 'DM Sans', sans-serif; font-size: 15px; color: var(--muted); margin-top: 1.2rem;
+      font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--muted); margin-top: 0.6rem;
     }
 
     /* ── INFO STRIP ───────────────────────────── */
@@ -301,17 +301,10 @@
           <p>
             I am a Ph.D. Candidate (ABD) in Economics at
             <a href="https://www.depts.ttu.edu/econ/" target="_blank">Texas Tech University</a>,
-            specializing in quantitative macroeconomics and structural econometrics. My research
-            studies how economic agents make dynamic decisions under uncertainty, with a focus on
-            consumption behavior, labor adjustment, and exposure to risk across different shock
-            environments.
-          </p>
-          <p>
-            My <a href="#" data-tab="research" class="tab-link">current work</a> investigates the
-            welfare implications of oil-price shocks, wildfire risk and labor markets, AI exposure
-            in U.S. trade, and the role of digitalization in public services. I combine reduced-form
-            empirical methods with structural modeling to connect household decision rules to
-            aggregate outcomes.
+            specializing in quantitative macroeconomics and structural econometrics. My
+            <a href="#" data-tab="research" class="tab-link">research</a> studies how economic
+            agents make dynamic decisions under uncertainty — with applications to consumption
+            smoothing, labor markets, AI exposure in trade, and digitalization in public services.
           </p>
 
           <!-- JMP Box -->
@@ -320,15 +313,14 @@
             <div class="jmp-title">Price Shocks, Consumption Smoothing, and Household Welfare: State-Dependent Evidence on Intertemporal Adjustment</div>
             <div class="jmp-tags">Macroeconomics &middot; Energy Economics &middot; Consumption Dynamics</div>
             <div class="jmp-abstract">
-              The paper revisits the LCPIH using the 2008 oil-price spike, the 2020 pandemic collapse,
-              and the 2022 Ukraine-driven surge. Consumption smoothing is state dependent: nondurable
-              spending remains comparatively smooth, while durable spending contracts sharply when oil
-              shocks interact with tighter household balance-sheet conditions. Using reduced-form
-              oil-shock regressions, IV-GMM, local projections, and Bayesian VARs, the paper shows
-              that the LCPIH excess-sensitivity parameter rises during modern oil-shock episodes and
-              that implied welfare costs are economically large.
+              Revisits the LCPIH across three oil-price episodes (2008, 2020, 2022). Finds that
+              consumption smoothing is state-dependent and that excess sensitivity and implied welfare
+              costs rise significantly during oil-shock periods.
             </div>
-           
+            <div class="jmp-links">
+              <a href="JMP_Oil_Shocks_Consumption_Smoothing.pdf" target="_blank">Draft</a>
+              <a href="JMP_Slides.pdf" target="_blank">Slides</a>
+            </div>
           </div>
 
           <p class="methods-line">
