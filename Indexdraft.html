@@ -1,1 +1,564 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Md Mohiuddin</title>
+  <style>
+    :root {
+     --bg: #ffffff;
+      --text: #1b1f23;
+      --muted: #5b6570;
+      --nav: #1f4d7a;
+      --card: #ffffff;
+      --line: #d7dee7;
+      --accent: #2c6aa0;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .topbar {
+      background: #243746;
+      color: #fff;
+      padding: 16px 0;
+      border-bottom: 4px solid #182631;
+    }
+
+    .container {
+      width: min(1400px, 95%);
+      margin: 0 auto;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      letter-spacing: 0.2px;
+      color: #fff;
+    }
+
+    .brand p {
+      margin: 4px 0 0;
+      color: #d7e4ef;
+      font-size: 1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      font-size: 0.98rem;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+
+    .hero {
+      padding: 44px 0 28px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.55fr) 300px;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(19, 34, 47, 0.06);
+    }
+
+    .intro {
+      padding: 24px 28px;
+      width: 100%;
+      min-width: 0;
+      align-self: start;
+    }
+
+    .intro h2 {
+      margin: 0 0 14px;
+      font-size: 2.4rem;
+      line-height: 1.1;
+    }
+
+    .intro p {
+      margin: 0 0 12px;
+      color: #2a2f35;
+      font-size: 1.08rem;
+      line-height: 1.55;
+      max-width: none;
+    }
+
+    .jmp-callout {
+      margin: 14px 0 14px;
+      padding: 16px 18px;
+      background: #f8fbfe;
+      border: 1px solid #cfdbe8;
+      border-left: 5px solid var(--accent);
+      border-radius: 12px;
+    }
+
+    .jmp-callout h3 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+      color: var(--nav);
+    }
+
+    .jmp-title {
+      margin: 0 0 8px;
+      font-size: 1.18rem;
+      line-height: 1.4;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .jmp-meta {
+      margin: 0 0 10px;
+      font-size: 0.97rem;
+      color: var(--muted);
+    }
+
+    .jmp-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .jmp-links a {
+      display: inline-block;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      font-weight: 600;
+    }
+
+    .sidebar {
+      padding: 22px 18px;
+      text-align: center;
+      width: 300px;
+      justify-self: end;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-self: start;
+    }
+
+    .sidebar img {
+      width: 230px;
+      height: 230px;
+      max-width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      margin-bottom: 16px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .sidebar h3 {
+      margin: 6px 0 10px;
+      font-size: 1.85rem;
+      line-height: 1.15;
+    }
+
+    .sidebar p {
+      display: none;
+    }
+
+    .quick-links {
+      margin-top: 8px;
+      display: grid;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .quick-links a {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #f9fbfd;
+      font-weight: 600;
+    }
+
+    .sections {
+      padding: 12px 0 48px;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .panel {
+      padding: 24px 26px;
+      min-height: 100%;
+    }
+
+    .panel h3 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 1.3rem;
+      color: var(--nav);
+      border-bottom: 2px solid #e8eef5;
+      padding-bottom: 8px;
+    }
+
+    .panel ul {
+      margin: 0;
+      padding-left: 20px;
+      line-height: 1.8;
+    }
+
+    .panel li { margin-bottom: 6px; }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    .hero-strip {
+      margin-top: 6px;
+      margin-bottom: 20px;
+    }
+
+    .strip-card {
+      padding: 14px 18px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      align-items: center;
+    }
+
+    .strip-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .strip-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--nav);
+    }
+
+    .strip-value {
+      font-size: 1rem;
+      color: #2a2f35;
+      line-height: 1.4;
+    }
+
+    footer {
+      background: #243746;
+      color: #e1ebf2;
+      padding: 22px 0;
+      font-size: 0.95rem;
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .strip-card {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid,
+      .section-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        width: 100%;
+        justify-self: stretch;
+      }
+
+      .sidebar img {
+        width: 220px;
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container brand">
+      <div>
+        <h1>Md Mohiuddin</h1>
+        <p>Ph.D. Candidate (ABD), Economics | Texas Tech University</p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Homepage</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#teaching">Teaching</a></li>
+          <li><a href="#cv">C.V.</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <article class="card intro">
+          <h2>Md Mohiuddin</h2>
+          <p>
+            I am a Ph.D. candidate in Economics at Texas Tech University specializing in quantitative macroeconomics and structural econometrics.</p>
+          <p>
+            My research studies how economic agents make dynamic decisions under uncertainty, with a focus on consumption behavior, labor adjustment, and exposure to risk across different shock environments.
+           </p>
+          <div class="jmp-callout">
+            <h3>Job Market Paper</h3>
+            <p class="jmp-title">Price Shocks, Consumption Smoothing, and Household Welfare: State-Dependent Evidence on Intertemporal Adjustment</p>
+            <p class="jmp-meta">Macroeconomics · Energy Economics · Consumption Dynamics</p>
+            <p>
+              The paper revisits the LCPIH using the 2008 oil-price spike, the 2020 pandemic collapse, and the 2022 Ukraine-driven surge. I show that consumption smoothing is state dependent: nondurable spending remains comparatively smooth, while durable spending contracts sharply when oil shocks interact with tighter household balance-sheet conditions.
+            </p>
+            <p>
+              Using reduced-form oil-shock regressions, IV-GMM, local projections, and Bayesian VARs, the paper shows that the LCPIH excess-sensitivity parameter rises during modern oil-shock episodes and that the implied welfare costs are economically large. The analysis provides reduced-form evidence on deviations from intertemporal optimization and motivates a structural interpretation of household decision rules under large macroeconomic shocks.
+            </p>
+            <div class="jmp-links">
+              <a href="JMP_Oil_Shocks_Consumption_Smoothing.pdf" target="_blank">Draft</a>
+              <a href="JMP_Slides.pdf" target="_blank">Slides</a>
+            </div>
+          </div>
+          <p>
+            Methods: Local Projections · Bayesian VAR · IV-GMM · DSGE (in progress) · Structural Econometrics (in development)
+          </p>
+        </article>
+
+        <aside class="card sidebar">
+          <img src="profile.jpg" alt="Md Mohiuddin profile photo" />
+          <h3>Md Mohiuddin</h3>
+          <div class="quick-links">
+            <a href="Mohiuddin-Md_CV.pdf" target="_blank">Curriculum Vitae</a>
+            <a href="#research">Research</a>
+            <a href="#teaching">Teaching</a>
+            <a href="mailto:mdmohiud@ttu.edu">Email</a>
+            <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="container hero-strip">
+      <div class="card strip-card">
+        <div class="strip-item">
+          <span class="strip-label">Fields</span>
+          <span class="strip-value"> Quantitative Macroeconomics · Structural Econometrics · Household Finance · Dynamic Decision-Making · AI & Technological Change</span>
+        </div>
+        
+        <div class="strip-item">
+          <span class="strip-label">Job Market</span>
+          <span class="strip-value">2026–2027 Academic Year</span>
+        </div>
+
+        <div class="strip-item">
+          <span class="strip-label">Academic Awards in 2026</span>
+          <span class="strip-value"> Covenant Health and Social Services Graduate Fellowship </span>
+           <span class="strip-value">  I.C. Enoch III Scholarship </span>
+          <span class="strip-value">Founder General Fellow, The Philadelphia Society</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="sections">
+      <div class="container section-grid">
+        
+
+        <section class="card panel">
+          <h3>Education</h3>
+          <ul>
+            <li>Ph.D. in Economics, Texas Tech University, expected December, 2026</li>
+            <li>M.S. in Analytical Economics, University of New Hampshire, 2022</li>
+            <li>M.S. in Economics, University of Chittagong</li>
+            <li>B.S. in Economics, University of Chittagong</li>
+          </ul>
+        </section>
+
+        <section class="card panel">
+          <h3>Academic Positions</h3>
+          <ul>
+            <li><strong>Graduate Part-Time Instructor</strong>, Texas Tech University (2025–Present)</li>
+            <li><strong>Graduate Teaching Assistant</strong>, Texas Tech University (2023–2025)</li>
+            
+                                
+          </ul>
+        </section>
+
+        
+
+        <section class="card panel">
+          <h3>Professional Affiliations</h3>
+          <ul>
+            <li>American Economic Association (2026–Present)</li>
+            <li>American Institute for Economic Research (2024–Present)</li>
+            <li>National Association for Business Economics (2024–Present)</li>
+            <li>The Institute for Humane Studies (IHS) (2025–Present)</li>
+            <li>South Asian Network for Development and Environmental Economics (2019–Present)</li>
+            <li>Bangladesh Economic Association (2017–Present)</li>
+          </ul>
+        </section>
+
+        <section class="card panel">
+          <h3>Travel Grants & Academic Programs</h3>
+          <ul>
+            <li> Research Transparency and Reproducibility Training (RT2), BITSS (2026)</li>
+<li> Midwest Institutes Conference (MIC) – Disruptive Innovation Track (2026)</li>
+            <li>UC Berkeley Sloan Summer School on Environment & Energy (Summer 2025)</li>
+            <li>Political Economy of Emerging Technology, IHS (Summer 2025)</li>
+            <li>Classical Liberalism Seminar, Cato Institute (Summer 2025)</li>
+            <li> UIC The Classical Liberalism and Business Seminar (Summer 2025) </li>
+            <li>Indiana Seminar in Classical Liberalism (Summer 2025)</li>
+            <li>Special Education Research, Burkhart Center (Summer 2025)</li>
+          </ul>
+        </section>
+
+        <section class="card panel">
+          <h3>Selected Publications</h3>
+          <ul>
+            <li><strong>Determinants of Profitability of Private Banks in Bangladesh</strong>, 2017</li>
+            <li><strong>Economic Structuration and Environmental Kuznets Curve</strong>, 2025</li>
+            <li><strong>Fiscal Dynamics and Economic Shifts: U.S. Recessions</strong> (Under Review)</li>
+          </ul>
+        </section>
+
+        <section class="card panel">
+          <h3>Honors & Awards (Selected)</h3>
+          <ul>
+            <li>TTU Cash Family Endowed Graduate Fellowship</li>
+            <li>Dr. Rashid B. Al-Hmoud Scholarship</li>
+            <li>UNH Graduate Dean Fellowship</li>
+            <li>CU Graduate Fellowship</li>
+          </ul>
+        </section>
+
+        <section class="card panel">
+          <h3>Workshops & Training</h3>
+          <ul>
+            <li>Wagner-Peyser Data Science Training at the Wind Institute, (2024)</li>
+            <li>TTU Thesis & Dissertation Boot Camp (2024-2025)</li>
+            <li>TTU Winter Groundwork Program (2025)</li>
+            <li>Research Methods-Insights and Application, University of Calcutta (2020)</li>
+          </ul>
+        </section>
+
+        <section class="card panel">
+          <h3>Volunteer & Service</h3>
+          <ul>
+            <li>TTU Global Guide Ambassador</li>
+            <li>Volunteer, International Affairs & Student Events</li>
+            <li>Reviewer/Judge, TTU Graduate and Undergraduate Research Competitions</li>
+            <li>UNH Graduate Student Senator (2021-2022)</li>
+          </ul>
+        </section>
+
+        <section class="card panel">
+          <h3>Working Papers</h3>
+          <ul>
+            <li>Wildfire Risk and Uneven Local Adjustment: Evidence on Labor Market Responses and Adaptation Constraints</li>
+            <li>AI Exposure, Technology Races, and Strategic Concentration in U.S. Trade</li>
+          </ul>
+        </section>
+
+        <section class="card panel">
+          <h3>Works in Progress</h3>
+          <ul>
+            <li>Digitalization and Citizen Complaints: Evidence from NYC 311 Data</li>
+            <li>Preparing Students for an AI Economy: How States Are Shaping the Future Workforce</li>
+          </ul>
+        </section>
+
+        <section class="card panel" id="teaching">
+          <h3>Teaching Philosophy</h3>
+          <p>
+            My teaching philosophy is grounded in conceptual clarity, analytical discipline, and real-world application. I begin with intuition, move to formal analysis, and then connect the concept to data or a current policy problem.
+          </p>
+          <p>
+            Whether teaching introductory macroeconomics or econometrics, I emphasize how households, firms, and policymakers respond to shocks, constraints, and incentives.
+          </p>
+        </section>
+
+        <section class="card panel">
+          <h3>Teaching Experience</h3>
+          <ul>
+            <li><strong>Graduate Part-Time Instructor</strong>, Texas Tech University — Principles of Macroeconomics</li>
+            <li><strong>Graduate Teaching Assistant</strong>, Texas Tech University — Intermediate Economic Theory</li>
+            <li><strong>Departmental Tutor</strong>, Texas Tech University (Spring & Summer 2023)</li>
+            <li>Adjunct teaching across multiple universities in Bangladesh</li>
+          </ul>
+        </section>
+
+        <section class="card panel">
+          <h3>Teaching Effectiveness</h3>
+          <ul>
+            <li>Taught large undergraduate sections of about 120 students and smaller advanced classes of about 20–40 students</li>
+            <li>Designed course materials linking theory to inflation, energy shocks, and current policy issues</li>
+            <li>Supervised undergraduate and graduate research in applied economics and econometrics</li>
+          </ul>
+        </section>
+
+        <section class="card panel" id="cv">
+          <h3>C.V.</h3>
+          <p><a href="Mohiuddin-Md_CV.pdf" target="_blank">Download Academic CV (PDF)</a></p>
+        </section>
+
+        <section class="card panel full" id="contact">
+          <h3>Contact</h3>
+          <p>Email: <a href="mailto:mdmohiud@ttu.edu">mdmohiud@ttu.edu</a></p>
+          <p>Department of Economics, Texas Tech University, Lubbock, Texas</p>
+          
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© Md Mohiuddin</div>
+     
+    </div>
+  </footer>
+</body>
+</html>
