@@ -453,7 +453,41 @@
         grid-template-columns: 1fr;
         gap: 28px;
       }
+.appointment-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
 
+.appointment-list li{
+  display:block;
+  padding:10px 0;
+  border-bottom:1px solid #f3f4f6;
+  font-family:'DM Sans', sans-serif;
+  font-size:14.5px;
+  line-height:1.55;
+  color:#3a3a3a;
+}
+
+.appointment-list li::before{
+  content:none;
+}
+
+.app-title{
+  font-weight:600;
+  color:#1a1a1a;
+}
+
+.app-unit{
+  color:#4b5563;
+  margin-top:2px;
+}
+
+.app-date{
+  color:#6b7280;
+  font-size:13px;
+  margin-top:2px;
+}
       .nav-links a {
         padding: 0 9px;
         font-size: 13.5px;
@@ -754,67 +788,61 @@ study, research, government service, and industry careers.
 <!-- ========================================================= -->
 <!-- ACADEMIC APPOINTMENTS -->
 <!-- ========================================================= -->
-
 <div class="sec">
-<div class="sec-heading">Academic Appointments</div>
+  <div class="sec-heading">Academic Appointments</div>
 
-<div class="panel-grid">
+  <div class="panel-grid">
 
-<div class="panel-block">
+    <div class="panel-block">
+      <h4>Texas Tech University</h4>
+      <ul class="appointment-list">
+        <li>
+          <div class="app-title">Graduate Part-Time Instructor</div>
+          <div class="app-unit">Department of Economics</div>
+          <div class="app-date">2025–Present</div>
+        </li>
 
-<h4>Texas Tech University</h4>
+        <li>
+          <div class="app-title">Research Consultant (Accounting Research)</div>
+          <div class="app-unit">Lyons School of Accounting, Rawls College of Business</div>
+          <div class="app-date">2026–Present</div>
+        </li>
 
-<ul>
+        <li>
+          <div class="app-title">Graduate Teaching Assistant</div>
+          <div class="app-unit">Department of Economics</div>
+          <div class="app-date">2023–2025</div>
+        </li>
+      </ul>
+    </div>
 
-<li>
-<strong>Graduate Part-Time Instructor</strong><br>
-Department of Economics<br>
-2025–Present
-</li>
+    <div class="panel-block">
+      <h4>University of Chittagong</h4>
+      <ul class="appointment-list">
+        <li>
+          <div class="app-title">Associate Professor</div>
+          <div class="app-unit">Department of Economics</div>
+          <div class="app-date">On study leave</div>
+        </li>
 
-<li>
-<strong>Research Consultant (Accounting Research)</strong><br>
-Lyons School of Accounting, Rawls College of Business<br>
-2026–Present
-</li>
+        <li>
+          <div class="app-title">Assistant Professor</div>
+          <div class="app-unit">Department of Economics</div>
+        </li>
 
-<li>
-<strong>Graduate Teaching Assistant</strong><br>
-Department of Economics<br>
-2023–2025
-</li>
+        <li>
+          <div class="app-title">Lecturer</div>
+          <div class="app-unit">Department of Economics</div>
+        </li>
 
-</ul>
+        <li>
+          <div class="app-title">Adjunct Faculty</div>
+          <div class="app-unit">Multiple universities in Bangladesh</div>
+        </li>
+      </ul>
+    </div>
 
-</div>
-
-<div class="panel-block">
-
-<h4>University of Chittagong</h4>
-
-<ul>
-
-
-<li>
-<strong>Assistant Professor</strong><br>
-On Study Leave since 2021<br>
-</li>
-
-<li>
-<strong>Lecturer</strong><br>
-
-</li>
-
-<li>
-<strong>Adjunct Faculty</strong><br>
-Multiple Universities in Bangladesh<br>
-</li>
-
-</ul>
-
-</div>
-
-</div>
+  </div>
 </div>
 
 <!-- ========================================================= -->
